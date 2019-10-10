@@ -274,7 +274,6 @@
     NSArray *dataArray = [NSArray array];
     
 //    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"address" ofType:@"json"];
-    //修改路径
     
     // 注意文件名称的格式，图片必须写上@2x或者@3x的后缀
     NSString *fileName = @"address.json";
