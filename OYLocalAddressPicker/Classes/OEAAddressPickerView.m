@@ -272,7 +272,19 @@
     
     NSMutableArray *provinceArray = [NSMutableArray array];
     NSArray *dataArray = [NSArray array];
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"address" ofType:@"json"];
+    
+//    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"address" ofType:@"json"];
+    //修改路径
+    
+    // 注意文件名称的格式，图片必须写上@2x或者@3x的后缀
+    NSString *fileName = @"address.json";
+    // 获取当前的bundle,self只是在当前pod库中的一个类，也可以随意写一个其他的类
+    NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
+    // 获取当前bundle的名称
+    NSString *currentBundleName = currentBundle.infoDictionary[@"CFBundleName"];
+    // 获取文件的路径
+    NSString *plistPath = [currentBundle pathForResource:fileName ofType:nil inDirectory:[NSString stringWithFormat:@"%@.bundle",currentBundleName]];
+    
     NSData *data = [[NSData alloc] initWithContentsOfFile:plistPath];
     NSError *error = nil;
     id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];

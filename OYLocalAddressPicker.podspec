@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'OYLocalAddressPicker'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'A short description of OYLocalAddressPicker.'
 
 # This description is used to generate tags and improve search results.
@@ -32,9 +32,9 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'OYLocalAddressPicker/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'OYLocalAddressPicker' => ['OYLocalAddressPicker/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'OYLocalAddressPicker' => ['OYLocalAddressPicker/Assets/*']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
